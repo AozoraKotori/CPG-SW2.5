@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height">
+	<meta name="author" content="蒼空ことり(@Kotori_Aozora_M)">
+	<meta name="description" content="「ゆとシートⅡ」で作成したソード・ワールド2.5のキャラクターシートのデータからCCFOLIAのキャラクター駒用のチャットパレットを出力するツールです。">
+	<title>チャットパレット製造機(SW2.5)</title>
+
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;700&family=M+PLUS+1p:wght@400;700&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<main>
+		<section>
+			<h1 style="margin-top: 0;">チャットパレット製造機（SW2.5）</h1>
+			<h2>「チャットパレット製造機」とは</h2>
+			<p>
+				「<a href="https://yutorize.2-d.jp/ytsheet/sw2.5/">ゆとシートⅡ</a>」で作成したソード・ワールド2.5のキャラクターシートのデータから<a
+					href="https://ccfolia.com">CCFOLIA</a>のキャラクター駒用のチャットパレットを出力するツールです。
+			</p>
+			<p>
+				※本作は「グループＳＮＥ」及び「株式会社ＫＡＤＯＫＡＷＡ」が権利を有する『ソード・ワールド2.0／2.5』の二次創作です。
+			</p>
+
+			<h2>「チャットパレット製造機」でできること</h2>
+			<ul>
+				<li>キャラクターのステータスを参照する</li>
+				<ul>
+					<li>能力値と能力値ボーナス</li>
+					<li>冒険者レベルと各技能レベル</li>
+					<li>一般技能の名前とレベル</li>
+					<li>戦闘特技</li>
+				</ul>
+				<li>CCFOLIA用のチャットパレットを生成する</li>
+				<ul>
+					<li>オリジナルのチャットパレットも追加できます</li>
+				</ul>
+				<li>CCFOLIA用の駒データを生成する</li>
+				<ul>
+					<li>チャットパレットが付属したデータが生成されます</li>
+				</ul>
+			</ul>
+
+			<h2>対応環境</h2>
+			<p>Windows 10，Windows 11 (未検証)におけるGoogle Chrome，Microsoft Edge</p>
+
+			<h2>チャットパレット生成</h2>
+			<h3>ファイルの読み込み</h3>
+			<input type="file" id="Input" accept=".json" style="float:right">
+			<button disabled id="Reset" style="float:right">はじめからやり直す</button>
+			<p>「<a href="https://yutorize.2-d.jp/ytsheet/sw2.5/">ゆとシートⅡ</a>」で出力したキャラクターデータ（JSON形式）を読み込んでください。</p>
+
+			<h3>ステータス確認</h3>
+			<div class="adventurer" style="float:right"><label>冒険者レベル　<input disabled type="text" id="AdventLv"></label></div>
+			<div class="CharacterName"><label>名前　<input disabled type="text" id="name"></label></div>
+			<fieldset disabled class="status" style="width:30%">
+				<legend>能力値</legend>
+				<label>器用度：<input type="text" id="A"></label>
+				<label>＋増強 <input type="text" id="AddA"></label>
+				<label>⇒ボーナス <input type="text" id="AB"></label><br>
+
+				<label>敏捷度：<input type="text" id="B"></label>
+				<label>＋増強 <input type="text" id="AddB"></label>
+				<label>⇒ボーナス <input type="text" id="BB"></label><br>
+
+				<label>筋力　：<input type="text" id="C"></label>
+				<label>＋増強 <input type="text" id="AddC"></label>
+				<label>⇒ボーナス <input type="text" id="CB"></label><br>
+
+				<label>生命力：<input type="text" id="D"></label>
+				<label>＋増強 <input type="text" id="AddD"></label>
+				<label>⇒ボーナス <input type="text" id="DB"></label><br>
+
+				<label>知力　：<input type="text" id="E"></label>
+				<label>＋増強 <input type="text" id="AddE"></label>
+				<label>⇒ボーナス <input type="text" id="EB"></label><br>
+
+				<label>精神力：<input type="text" id="F"></label>
+				<label>＋増強 <input type="text" id="AddF"></label>
+				<label>⇒ボーナス <input type="text" id="FB"></label><br>
+			</fieldset>
+
+			<div>
+				<fieldset disabled class="Warrior" style="width:20%; float:left">
+					<legend>戦士系技能</legend>
+					<label>ファイター　　：<input type="text" id="Fig"></label><br>
+					<label>グラップラー　：<input type="text" id="Gra"></label><br>
+					<label>バトルダンサー：<input type="text" id="Bat"></label><br>
+					<label>フェンサー　　：<input type="text" id="Fen"></label><br>
+					<label>シューター　　：<input type="text" id="Sho"></label><br>
+				</fieldset>
+
+				<fieldset disabled class="Magic" style="width:20%; float:left">
+					<legend>魔法使い系技能</legend>
+					<label>ソーサラー　　　　：<input type="text" id="Sor"></label><br>
+					<label>コンジャラー　　　：<input type="text" id="Con"></label><br>
+					<label>プリースト　　　　：<input type="text" id="Pri"></label><br>
+					<label>マギテック　　　　：<input type="text" id="Mag"></label><br>
+					<label>フェアリーテイマー：<input type="text" id="Fai"></label><br>
+					<label>ドルイド　　　　　：<input type="text" id="Dru"></label><br>
+					<label>デーモンルーラー　：<input type="text" id="Dem"></label><br>
+					<br>
+					<label>ウィザード　　　　：<input type="text" id="Wiz"></label><br>
+				</fieldset>
+
+				<fieldset disabled class="others" style="width:20%; float:left">
+					<legend>その他系技能</legend>
+					<label>スカウト　　　：<input type="text" id="Sco"></label><br>
+					<label>レンジャー　　：<input type="text" id="Ran"></label><br>
+					<label>セージ　　　　：<input type="text" id="Sag"></label><br>
+					<label>エンハンサー　：<input type="text" id="Enh"></label><br>
+					<label>バード　　　　：<input type="text" id="Bar"></label><br>
+					<label>ライダー　　　：<input type="text" id="Rid"></label><br>
+					<label>アルケミスト　：<input type="text" id="Alc"></label><br>
+					<label>ジオマンサー　：<input type="text" id="Geo"></label><br>
+					<label>ウォーリーダー：<input type="text" id="War"></label><br>
+				</fieldset>
+
+				<fieldset disabled style="width:25%; float:left">
+					<legend>一般技能</legend>
+					<span class="CName"><input type="text" id="C01" value="一般技能1"></span>：
+					<span class="CLv"><input type="text" id="C01Lv"></span><br>
+					<span class="CName"><input type="text" id="C02" value="一般技能2"></span>：
+					<span class="CLv"><input type="text" id="C02Lv"></span><br>
+					<span class="CName"><input type="text" id="C03" value="一般技能3"></span>：
+					<span class="CLv"><input type="text" id="C03Lv"></span><br>
+					<span class="CName"><input type="text" id="C04" value="一般技能4"></span>：
+					<span class="CLv"><input type="text" id="C04Lv"></span><br>
+					<span class="CName"><input type="text" id="C05" value="一般技能5"></span>：
+					<span class="CLv"><input type="text" id="C05Lv"></span><br>
+					<span class="CName"><input type="text" id="C06" value="一般技能6"></span>：
+					<span class="CLv"><input type="text" id="C06Lv"></span><br>
+					<span class="CName"><input type="text" id="C07" value="一般技能7"></span>：
+					<span class="CLv"><input type="text" id="C07Lv"></span><br>
+					<span class="CName"><input type="text" id="C08" value="一般技能8"></span>：
+					<span class="CLv"><input type="text" id="C08Lv"></span><br>
+					<span class="CName"><input type="text" id="C09" value="一般技能9"></span>：
+					<span class="CLv"><input type="text" id="C09Lv"></span><br>
+					<span class="CName"><input type="text" id="C10" value="一般技能10"></span>：
+					<span class="CLv"><input type="text" id="C10Lv"></span><br>
+				</fieldset>
+			</div>
+
+			<fieldset disabled id="features" style="width:30%; float:left">
+				<legend>戦闘特技</legend>
+				<label>01 《<input type="text" id="F01">》</label><br>
+				<label>03 《<input type="text" id="F02">》</label><br>
+				<label>05 《<input type="text" id="F03">》</label><br>
+				<label>07 《<input type="text" id="F04">》</label><br>
+				<label>09 《<input type="text" id="F05">》</label><br>
+				<label>11 《<input type="text" id="F06">》</label><br>
+				<label>13 《<input type="text" id="F07">》</label><br>
+				<label>15 《<input type="text" id="F08">》</label><br>
+				<label>16 《<input type="text" id="F09">》</label><br>
+				<label>17 《<input type="text" id="F10">》</label><br>
+			</fieldset>
+
+			<fieldset disabled id="CheckList">
+				<legend>チェックリスト</legend>
+				<label><input type="checkbox" id="weapon">〈武器〉を1つ以上専用化している</label><br>
+				<label><input type="checkbox" id="tool">〈スカウト用ツール〉を専用化している</label><br>
+				<label><input type="checkbox" id="shield">〈盾〉を1つ以上専用化している</label><br>
+				<label><input type="checkbox" id="trigger">〈魔法の発動体〉を専用化している</label><br>
+				<label><input type="checkbox" id="holy">〈聖印〉を専用化している</label><br>
+				<label><input type="checkbox" id="magisphere">〈マギスフィア〉を専用化している</label><br>
+				<label><input type="checkbox" id="jewelry">〈宝石ケース〉，〈宝石飾り〉を専用化している</label><br>
+				<label><input type="checkbox" id="instrument">〈楽器〉を専用化している</label><br>
+				<label><input type="checkbox" id="drag">〈薬師道具セット〉を専用化している</label><br>
+				<label><input type="checkbox" id="amulet">〈幸運のお守り〉を装備している</label><br>
+			</fieldset>
+			<h3>チャットパレット生成</h3>
+			<button disabled id="generate" style="float:right;">チャットパレット生成</button>
+			<p>上記のチェックリストを確認の上，右のボタンを押してください。</p>
+			<div class="generating">
+				<textarea disabled id="default"></textarea>
+				オリジナルのチャットパレットを追加：
+				<textarea disabled id="original"></textarea>
+			</div>
+
+			<fieldset disabled id="Option">
+				<legend>チェックリスト</legend>
+				<label><input type="checkbox" id="Secret">ステータスを非公開にする（秘匿NPC・キャラクターなど）</label><br>
+				<label><input type="checkbox" id="Invisible">発言時キャラクターを表示しない（駒自体を立ち絵のように見せる場合）</label><br>
+				<label><input type="checkbox" id="HideStatus">盤面キャラクター一覧に表示しない（GM駒などステータス管理が必要ないもの）</label><br>
+			</fieldset>
+
+
+			<fieldset class="output">
+				<legend>出力メニュー</legend>
+				<button disabled id="copy">チャットパレットをコピー</button>　
+				<button disabled id="ccfolia">ココフォリアに出力</button>
+			</fieldset>
+		</section>
+		<footer>
+			<div class="container" style="font-size:16px">
+				<img id="amazon" src="https://aozorakotori.github.io/kotori-note/images/Amazon-logo.svg" alt="Amazon logo">
+				<span class="center buttonA buttonAb" style="float:right">
+					<a href="https://www.amazon.co.jp/hz/wishlist/ls/2NFPC04NO7T7K?ref_=wl_share" style="width:300px"
+						target="_blank" rel="noopener noreferrer">
+						<span>ウィッシュリスト</span>
+					</a>
+				</span>
+				Amazonウィッシュリスト（ほしい物リスト）を公開しています。<br>
+				よろしければご支援ください。ご協力ありがとうございます。
+				<div class="center" style="padding-top:1em">
+					© 2023 蒼空ことり All rights reserved.
+				</div>
+			</div>
+		</footer>
+		<script src="./js/loading.js"></script>
+		<script src="./js/reading.js"></script>
+		<script src="./js/erasing.js"></script>
+		<script src="./js/generating.js"></script>
+</body>
+</main>
+
+</html>
