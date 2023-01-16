@@ -17,7 +17,7 @@
 	--colorS4: #FF8080;
 	--colorS5: #FAA;
 
-	font-family: 'M PLUS 1p', sans-serif;
+	font-family: 'BIZ UDPGothic', sans-serif;
 }
 
 .html {
@@ -89,7 +89,7 @@ section,
 input {
 	font-size: 1rem;
 	text-align: right;
-	font-family: 'M PLUS 1 Code', sans-serif;
+	font-family: 'BIZ UDGothic', sans-serif;
 }
 
 button {
@@ -98,7 +98,7 @@ button {
 
 textarea {
 	font-size: 1rem;
-	font-family: 'M PLUS 1 Code', sans-serif;
+	font-family: 'BIZ UDGothic', sans-serif;
 }
 
 .adventurer input {
