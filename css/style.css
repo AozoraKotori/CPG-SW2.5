@@ -92,6 +92,10 @@ input {
 	font-family: 'BIZ UDGothic', sans-serif;
 }
 
+fieldset {
+	font-family: 'BIZ UDGothic', sans-serif;
+}
+
 button {
 	font-size: 1rem;
 }
@@ -151,7 +155,7 @@ textarea {
 }
 
 .output button {
-	width: 49%;
+	width: 48%;
 	font-size: 1.5rem;
 }
 
