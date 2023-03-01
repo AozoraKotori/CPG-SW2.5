@@ -448,19 +448,20 @@ function OutPut(KOMA, CLIP) {
 		Add++;
 	}
 
-	if (~stats.combatFeatsAuto.indexOf("トレジャーハント")) {
-		Add++;
-	}
+	if (typeof stats.combatFeatsAuto !== 'undefined') {
+		if (stats.combatFeatsAuto.indexOf("トレジャーハント")) {
+			Add++;
+		}
 
-	if (~stats.combatFeatsAuto.indexOf("トレジャーマスター")) {
-		Add++;
-	}
+		if (stats.combatFeatsAuto.indexOf("トレジャーマスター")) {
+			Add++;
+		}
 
-	if (~stats.combatFeatsAuto.indexOf("鋭い目")) {
-		Add++;
+		if (stats.combatFeatsAuto.indexOf("鋭い目")) {
+			Add++;
+		}
 	}
 	op += NL + "//戦利品獲得=" + Add + NL;
-
 	return op;
 }
 
