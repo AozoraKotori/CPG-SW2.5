@@ -236,11 +236,14 @@ function OutPut(KOMA, CLIP) {
 		if (drag.checked) {
 			op += "K10[13]TF4 〈救命草「毒属性」〉〈薬師道具セット〉" + NL + "K50[13]TF4 〈救難草「毒属性」〉〈薬師道具セット〉" + NL + "K00[13]TF4 〈魔香草「毒属性」〉〈薬師道具セット〉" + NL + "K10[13]TF4 〈魔海草「毒属性」〉〈薬師道具セット〉" + NL;
 		}
-
 	}
 
 	if (CLIP) {
-		op += NL + org.value.replace(/\n/g, "\\n");
+		if (KOMA) {
+			op += NL + org.value.replace(/\n/g, "\\n") + NL;
+		} else {
+			op += NL + org.value + NL;
+		}
 	}
 
 	op += NL + "■パラメータ■" + NL;
