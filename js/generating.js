@@ -142,7 +142,7 @@ function OutPut(KOMA, CLIP) {
 	op += NL + "◆魔法行使判定" + NL;
 	for (let k = 0; k < MagicSkillBox.length; k++) {
 		if (MagicSkillBox[k].value > 0) {
-			op += "2d6+{魔力:" + MagicSkillName[k] + "} [" + MagicName[k] + "行使判定]" + NL;
+			op += "2d6+{魔力:" + MagicName[k] + "} [" + MagicName[k] + "行使判定]" + NL;
 		}
 	}
 
