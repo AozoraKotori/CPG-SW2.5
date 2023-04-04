@@ -101,5 +101,6 @@ Feat07 = document.getElementById("F07");
 Feat08 = document.getElementById("F08");
 Feat09 = document.getElementById("F09");
 Feat10 = document.getElementById("F10");
+Feat11 = document.getElementById("F11");
 
-FeatureBox = [Feat01, Feat02, Feat03, Feat04, Feat05, Feat06, Feat07, Feat08, Feat09, Feat10];
+FeatureBox = [Feat01, Feat02, Feat03, Feat04, Feat05, Feat06, Feat07, Feat08, Feat09, Feat10, Feat11];

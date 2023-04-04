@@ -72,7 +72,7 @@ function ReadStatus() {
 		}
 	}
 
-	Features = [stats.combatFeatsLv1, stats.combatFeatsLv3, stats.combatFeatsLv5, stats.combatFeatsLv7, stats.combatFeatsLv9, stats.combatFeatsLv11, stats.combatFeatsLv13, stats.combatFeatsLv15, stats.combatFeatsLv16, stats.combatFeatsLv17];
+	Features = [stats.combatFeatsLv1, stats.combatFeatsLv3, stats.combatFeatsLv5, stats.combatFeatsLv7, stats.combatFeatsLv9, stats.combatFeatsLv11, stats.combatFeatsLv13, stats.combatFeatsLv15, stats.combatFeatsLv16, stats.combatFeatsLv17, stats.combatFeatsLv1bat];
 	for (let i = 0; i < FeatureBox.length; i++) {
 		if (typeof Features[i] === 'undefined') {
 			FeatureBox[i].value = "";

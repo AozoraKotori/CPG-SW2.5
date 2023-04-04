@@ -435,14 +435,14 @@ function OutPut(KOMA, CLIP) {
 	}
 
 	for (let i = 0; i < FeatureBox.length; i++) {
-		if (FeatureBox.value == "回避強化Ⅰ") {
-			op += "//《回避強化》=1" + NL;
+		if (FeatureBox.value == "回避行動Ⅰ") {
+			op += "//《回避行動》=1" + NL;
 			break;
-		} else if (FeatureBox.value == "回避強化Ⅱ") {
-			op += "//《回避強化》=2" + NL;
+		} else if (FeatureBox.value == "回避行動Ⅱ") {
+			op += "//《回避行動》=2" + NL;
 			break;
 		} else if (i == FeatureBox.length - 1) {
-			op += "//《回避強化》=0" + NL;
+			op += "//《回避行動》=0" + NL;
 		}
 	}
 
