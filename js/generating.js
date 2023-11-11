@@ -411,10 +411,10 @@ function OutPut(KOMA, CLIP) {
 	}
 
 	for (let i = 0; i < FeatureBox.length; i++) {
-		if (FeatureBox.value == "賦術強化Ⅰ") {
+		if (FeatureBox[i].value == "賦術強化Ⅰ") {
 			op += "//《賦術強化》=1" + NL;
 			break;
-		} else if (FeatureBox.value == "賦術強化Ⅱ") {
+		} else if (FeatureBox[i].value == "賦術強化Ⅱ") {
 			op += "//《賦術強化》=2" + NL;
 			break;
 		} else if (i == FeatureBox.length - 1) {
@@ -423,22 +423,22 @@ function OutPut(KOMA, CLIP) {
 	}
 
 	for (let i = 0; i < FeatureBox.length; i++) {
-		if (FeatureBox.value == "命中強化Ⅰ") {
+		if (FeatureBox[i].value == "命中強化Ⅰ") {
 			op += "//《命中強化》=1" + NL;
 			break;
-		} else if (FeatureBox.value == "命中強化Ⅱ") {
+		} else if (FeatureBox[i].value == "命中強化Ⅱ") {
 			op += "//《命中強化》=2" + NL;
 			break;
-		} else if (i == FeatureBox.length - 1) {
+		} else if (i == FeatureBox[i].length - 1) {
 			op += "//《命中強化》=0" + NL;
 		}
 	}
 
 	for (let i = 0; i < FeatureBox.length; i++) {
-		if (FeatureBox.value == "回避行動Ⅰ") {
+		if (FeatureBox[i].value == "回避行動Ⅰ") {
 			op += "//《回避行動》=1" + NL;
 			break;
-		} else if (FeatureBox.value == "回避行動Ⅱ") {
+		} else if (FeatureBox[i].value == "回避行動Ⅱ") {
 			op += "//《回避行動》=2" + NL;
 			break;
 		} else if (i == FeatureBox.length - 1) {
