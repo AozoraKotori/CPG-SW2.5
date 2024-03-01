@@ -206,7 +206,7 @@ function OutPut(KOMA, CLIP) {
 		op += "2d6+{ウォーリーダー技能レベル}+{敏捷度ボーナス} [先制判定:ウォーリーダー技能]" + NL;
 		CraftCommand = [stats.craftCommand1, stats.craftCommand2, stats.craftCommand3, stats.craftCommand4, stats.craftCommand5, stats.craftCommand6, stats.craftCommand7, stats.craftCommand8, stats.craftCommand9, stats.craftCommand10, stats.craftCommand11, stats.craftCommand12, stats.craftCommand13, stats.craftCommand14, stats.craftCommand15, stats.craftCommand16, stats.craftCommand17, stats.craftCommand18, stats.craftCommand19, stats.craftCommand20];
 		for (let k = 0; k < CraftCommand.length; k++) {
-			if (CraftCommand[k] == "陣率：軍師の知略") {
+			if (CraftCommand[k] == "軍師の知略") {
 				op += "2d6+{ウォーリーダー技能レベル}+{知力ボーナス}+1 [先制判定:ウォーリーダー技能【陣率：軍師の知略】]" + NL;
 			}
 		}
