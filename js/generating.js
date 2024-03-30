@@ -117,7 +117,7 @@ function OutPut(KOMA, CLIP) {
 	}
 
 	op += NL + "◆回避力判定" + NL;
-	for (let k = 0; k < 3; k++) {
+	for (let k = 0; k < 4; k++) {
 		if (WarSkillBox[k].value > 0) {
 			op += "2d6+{" + WarSkillName[k] + "技能レベル}+{敏捷度ボーナス}+{《回避行動》} [回避力判定:" + WarSkillName[k] + "技能]" + NL;
 		}
